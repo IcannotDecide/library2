@@ -3,3 +3,5 @@ https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events#e
 
 Brush up on CSS grid and flex
 https://developer.mozilla.org/en-US/docs/Web/CSS/grid
+Read this
+https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-introduction-to-grid#what-is-grid

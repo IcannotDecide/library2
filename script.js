@@ -31,8 +31,26 @@ function addBookToLibrary(title, author, numOfPages, read) {
 
 const cards = document.querySelector(".cards");
 
+for (let i = 0; i < myLibrary.length; i++) {
+  const newDiv = document.createElement("div");
+  
+  const title = document.createElement("p");
 
-// Used to append books to the cards div
+  title.textContent = myLibrary[i].title;
+  const author = document.createElement("p");
+  author.textContent = myLibrary[i].author;
+
+  const numOfPages = document.createElement("p");
+  numOfPages.textContent = myLibrary[i].numOfPages;
+
+  const read = document.createElement("p");
+  read.textContent = "read";
+
+  newDiv.append(title, author, numOfPages, read);
+  cards.appendChild(newDiv);
+}
+
+
 // const beijing = document.createElement("p");
 // beijing.textContent = "wassup beijing";
 // cards.appendChild(beijing)
