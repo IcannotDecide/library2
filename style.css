@@ -9,6 +9,7 @@
   --bg-color: #bae6fd;
   --txt-color: #f0f9ff;
   --card-bg-color: #082f49;
+  --button-color: #0ea5e9;
 }
 
 body {
@@ -32,4 +33,20 @@ body {
   justify-content: center;
   gap: 10px;
   border-radius: 15px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+button {
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--button-color);
+  border-radius: 10px;
+  color: var(--txt-color);
 }
