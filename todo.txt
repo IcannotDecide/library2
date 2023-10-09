@@ -1,7 +1,4 @@
-For DOM Manipulation 
-https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events#events
-
-Brush up on CSS grid and flex
-https://developer.mozilla.org/en-US/docs/Web/CSS/grid
 Read this
-https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-introduction-to-grid#what-is-grid
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+
+Change the other modal in the original library to use the dialog box in a new branch on git

@@ -50,7 +50,12 @@ for (let i = 0; i < myLibrary.length; i++) {
   cards.appendChild(newDiv);
 }
 
+// The modal code
 
-// const beijing = document.createElement("p");
-// beijing.textContent = "wassup beijing";
-// cards.appendChild(beijing)
+const dialog = document.querySelector("dialog")
+const showButton = document.querySelector("#open-btn");
+console.log(showButton)
+
+showButton.addEventListener("click", () => {
+  dialog.showModal()
+})
