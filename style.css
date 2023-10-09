@@ -55,9 +55,20 @@ dialog {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+    background-color: var(--card-bg-color);
+    color: var(--txt-color);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 ::backdrop {
   background-color: black;
   opacity: 0.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
