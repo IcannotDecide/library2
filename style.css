@@ -51,6 +51,12 @@ button {
   color: var(--txt-color);
 }
 
+dialog {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
 ::backdrop {
   background-color: black;
   opacity: 0.5;
