@@ -51,11 +51,15 @@ for (let i = 0; i < myLibrary.length; i++) {
 }
 
 // The modal code
-
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#open-btn");
-console.log(showButton)
+const closeButton = document.querySelector("dialog button");
+
 
 showButton.addEventListener("click", () => {
   dialog.showModal()
-})
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
