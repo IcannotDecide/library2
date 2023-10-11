@@ -1,1 +1,1 @@
-Look into position fixed
+Get the input from the form and write an if statement on the submit event listener
