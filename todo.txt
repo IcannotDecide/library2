@@ -1,4 +1,1 @@
-Read this
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-
-Change the other modal in the original library to use the dialog box in a new branch on git
+Look into position fixed

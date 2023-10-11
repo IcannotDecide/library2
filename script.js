@@ -63,3 +63,11 @@ showButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
+
+const form = document.querySelector("form");
+const submit = document.querySelector("#submit");
+submit.addEventListener("click", (e) => {
+  e.preventDefault()
+  dialog.close()
+  form.reset()
+})
