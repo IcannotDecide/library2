@@ -1,21 +1,4 @@
-const myLibrary = [  {
-  "title": "Harry Potter",
-  "author": "JK Rowling",
-  "numOfPages": 500,
-  "read": true
-},
-{
-  "title": "The time at...",
-  "author": "Bob",
-  "numOfPages": 250,
-  "read": true
-},
-{
-  "title": "Am I a squid?",
-  "author": "Thett",
-  "numOfPages": 10,
-  "read": true
-}];
+const myLibrary = [];
 
 function Book(title, author, numOfPages, read) {
   this.title = title,
@@ -27,26 +10,27 @@ function Book(title, author, numOfPages, read) {
 function addBookToLibrary(title, author, numOfPages, read) {
   const newBook = new Book(title, author, numOfPages, read)
   myLibrary.push(newBook)
+  addBookToDOM(title, author, numOfPages, read)
 };
 
 const cards = document.querySelector(".cards");
 
-for (let i = 0; i < myLibrary.length; i++) {
+function addBookToDOM(title, author, numOfPages, read) {
   const newDiv = document.createElement("div");
   
-  const title = document.createElement("p");
+  const titleP = document.createElement("p");
 
-  title.textContent = myLibrary[i].title;
-  const author = document.createElement("p");
-  author.textContent = myLibrary[i].author;
+  titleP.textContent = title;
+  const authorP = document.createElement("p");
+  authorP.textContent = author;
 
-  const numOfPages = document.createElement("p");
-  numOfPages.textContent = myLibrary[i].numOfPages;
+  const numOfPagesP = document.createElement("p");
+  numOfPagesP.textContent = numOfPages;
 
-  const read = document.createElement("p");
-  read.textContent = "read";
+  const readP = document.createElement("p");
+  readP.textContent = read;
 
-  newDiv.append(title, author, numOfPages, read);
+  newDiv.append(titleP, authorP, numOfPagesP, readP);
   cards.appendChild(newDiv);
 }
 
@@ -73,9 +57,10 @@ submit.addEventListener("click", (e) => {
   const read = document.querySelector("#read").checked
 
   if(title && author && !isNaN(numOfPages) && numOfPages >= 1 && numOfPages < 99999) {
-  e.preventDefault()
-  dialog.close()
-  form.reset()
-  }
+    addBookToLibrary(title, author, numOfPages, read);
+  e.preventDefault();
+  dialog.close();
+  form.reset();
+  };
   return;
-})
+});
