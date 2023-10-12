@@ -67,7 +67,15 @@ closeButton.addEventListener("click", () => {
 const form = document.querySelector("form");
 const submit = document.querySelector("#submit");
 submit.addEventListener("click", (e) => {
+  const title = document.querySelector("#title").value
+  const author = document.querySelector("#author").value
+  const numOfPages = document.querySelector("#numOfPages").value
+  const read = document.querySelector("#read").checked
+
+  if(title && author && !isNaN(numOfPages) && numOfPages >= 1 && numOfPages < 99999) {
   e.preventDefault()
   dialog.close()
   form.reset()
+  }
+  return;
 })
