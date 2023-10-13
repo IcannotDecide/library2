@@ -1,11 +1,12 @@
 const myLibrary = [];
 let id = 0;
 
-function Book(title, author, numOfPages, read) {
+function Book(title, author, numOfPages, read, id) {
   this.title = title,
     this.author = author,
     this.numOfPages = numOfPages,
-    this.read = read
+    this.read = read,
+    this.id = id
 };
 
 function addBookToLibrary(title, author, numOfPages, read) {
@@ -16,10 +17,10 @@ function addBookToLibrary(title, author, numOfPages, read) {
 };
 
 function removeBook(e) {
-  const elementID = e.target.parentElement.dataset.id;
-  e.target.parentElement.remove()
-  const libraryIndex = n => n === elementID;
-  myLibrary.splice(myLibrary.findIndex(libraryIndex), 1);
+  const elementID = +e.target.parentElement.dataset.id;
+  e.target.parentElement.remove();
+  const libraryIndex = n => n.id === elementID;
+  myLibrary.splice(myLibrary.findIndex(libraryIndex), 1)
 }
 
 const cards = document.querySelector(".cards");
@@ -73,7 +74,7 @@ function finishForm(e) {
   const read = document.querySelector("#read").checked
 
   if (title && author && !isNaN(numOfPages) && numOfPages >= 1 && numOfPages < 99999) {
-    addBookToLibrary(title, author, numOfPages, read);
+    addBookToLibrary(title, author, numOfPages, read, id);
     e.preventDefault();
     dialog.close();
     form.reset();
