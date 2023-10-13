@@ -6,7 +6,10 @@ function Book(title, author, numOfPages, read, id) {
     this.author = author,
     this.numOfPages = numOfPages,
     this.read = read,
-    this.id = id
+    this.id = id,
+    this.changeRead = function () {
+      return read
+    };
 };
 
 function addBookToLibrary(title, author, numOfPages, read) {
@@ -21,6 +24,15 @@ function removeBook(e) {
   e.target.parentElement.remove();
   const libraryIndex = n => n.id === elementID;
   myLibrary.splice(myLibrary.findIndex(libraryIndex), 1)
+}
+
+function changeStatus(e) {
+  const elementID = +e.target.parentElement.dataset.id;
+  const libraryIndex = myLibrary.findIndex(n => n.id === elementID);
+  
+  // myLibrary[libraryIndex].changeRead();
+
+ e.target.parentElement.children[3].innerText = myLibrary[libraryIndex].read
 }
 
 const cards = document.querySelector(".cards");
@@ -41,11 +53,15 @@ function addBookToDOM(title, author, numOfPages, read) {
   const readP = document.createElement("p");
   readP.textContent = read;
 
+  const changeRead = document.createElement("button");
+  changeRead.innerText = "Read";
+  changeRead.addEventListener("click", changeStatus);
+
   const removeButton = document.createElement("button");
   removeButton.innerText = "Remove book";
   removeButton.addEventListener("click", removeBook);
 
-  newDiv.append(titleP, authorP, numOfPagesP, readP, removeButton);
+  newDiv.append(titleP, authorP, numOfPagesP, readP, changeRead, removeButton);
 
   cards.appendChild(newDiv);
 }
