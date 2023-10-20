@@ -8,7 +8,7 @@ function Book(title, author, numOfPages, read, id) {
     this.read = read,
     this.id = id,
     this.changeRead = function () {
-      return read
+      this.read = !this.read
     };
 };
 
@@ -29,10 +29,8 @@ function removeBook(e) {
 function changeStatus(e) {
   const elementID = +e.target.parentElement.dataset.id;
   const libraryIndex = myLibrary.findIndex(n => n.id === elementID);
-  
-  // myLibrary[libraryIndex].changeRead();
-
- e.target.parentElement.children[3].innerText = myLibrary[libraryIndex].read
+  myLibrary[libraryIndex].changeRead();
+  e.target.parentElement.children[3].innerText = myLibrary[libraryIndex].read
 }
 
 const cards = document.querySelector(".cards");
